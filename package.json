@@ -1,0 +1,24 @@
+{
+  "name": "nimbasa",
+  "version": "1.0.0",
+  "description": "another generic discord.js bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "discordjs",
+    "v14",
+    "javascript",
+    "js",
+    "discord",
+    "discord-bot",
+    "discord-js"
+  ],
+  "author": "decov",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  }
+}
