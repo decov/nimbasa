@@ -8,16 +8,17 @@ const client = new Client({
     partials: [User, Message, GuildMember, ThreadMember]
 });
 
-// constando a função de carregar os eventos do bot
+// função de carregar os eventos do bot
 const { loadEvents } = require('./handlers/eventHandler');
 
-// setando o arquivo que contém configs
-client.config = require('./config.json');
-
+client.config = require('./config.json'); // arquivo que contém configs
 client.events = new Collection();
 
+// executar eventos de client
+loadEvents(client);
+
 client
-    .login(client.config.TOKEN) // logando o client com o token no arquivo config.json
+    .login(client.config.TOKEN) // logando o client com o token
     .then(() => {
         console.log(`client logado como ${client.user.username}...`); // log no terminal
         
