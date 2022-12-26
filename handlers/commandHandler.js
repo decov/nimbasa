@@ -25,3 +25,5 @@ async function loadCommands(client) {
 
     return console.log(table.toString(), '\ncomandos inicializados com sucesso...');
 }
+
+module.exports = { loadCommands };
