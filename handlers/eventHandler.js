@@ -32,3 +32,5 @@ async function loadEvents(client) {
 
     return console.log(table.toString(), "\neventos inicializados com sucesso...");
 }
+
+module.exports = { loadEvents };
