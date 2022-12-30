@@ -24,5 +24,7 @@ module.exports = {
                 content: "esse comando está apenas disponível para o desenvolvedor...",
                 ephemeral: true
             });
+
+        command.execute(interaction, client);
     }
 }
