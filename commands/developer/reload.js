@@ -15,16 +15,16 @@ module.exports = {
 
     data: new SlashCommandBuilder()
         .setName('reload')
-        .setDescription('recarrega todos os comandos e eventos do bot...')
+        .setDescription('recarrega todos os comandos e eventos do bot.')
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
         .addSubcommand((options) => options
             .setName('eventos')
-            .setDescription('recarrega os eventos do bot...'))
+            .setDescription('recarrega todos os eventos do bot.'))
             
         .addSubcommand((options) => options
             .setName('comandos')
-            .setDescription('recarrega os comandos do bot...')
+            .setDescription('recarrega todos os comandos do bot.')
         ),
 
     /**
@@ -45,7 +45,7 @@ module.exports = {
                 loadEvents(client);
 
                 interaction.reply({
-                    content: "eventos recarregados...",
+                    content: "eventos recarregados com sucesso...",
                     ephemeral: true
                 });
             }
@@ -56,7 +56,7 @@ module.exports = {
                 loadCommands(client);
 
                 interaction.reply({
-                    content: "comandos recarregados...",
+                    content: "comandos recarregados com sucesso...",
                     ephemeral: true
                 });
             }
