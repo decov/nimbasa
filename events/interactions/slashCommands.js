@@ -18,5 +18,11 @@ module.exports = {
                 content: "esse comando está desatualizado...",
                 ephemeral: true
             });
+
+        if (command.developer && interaction.user.id !== "1041302056872448100")
+            return interaction.reply({
+                content: "esse comando está apenas disponível para o desenvolvedor...",
+                ephemeral: true
+            });
     }
 }
