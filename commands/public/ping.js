@@ -3,7 +3,7 @@ const { ChatInputCommandInteraction, SlashCommandBuilder } = require('discord.js
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('ping')
-        .setDescription('responde com um pong...'),
+        .setDescription('responde com um pong.'),
 
     /**
      * 
