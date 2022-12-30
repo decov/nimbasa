@@ -15,7 +15,7 @@ module.exports = {
 
         if (!command)
             return interaction.reply({
-                content: "esse comando é inválido...",
+                content: "esse comando está desatualizado...",
                 ephemeral: true
             });
     }
