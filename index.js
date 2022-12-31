@@ -11,6 +11,9 @@ const client = new Client({
 // função de carregar os eventos do bot
 const { loadEvents } = require('./handlers/eventHandler');
 
+// constando o mongoose para suporte de mongodb
+const { connect } = require('mongoose');
+
 client.config = require('./config.json'); // arquivo que contém configs
 
 // eventos e comandos do bot
