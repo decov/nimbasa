@@ -23,7 +23,7 @@ loadEvents(client);
 client
     .login(client.config.TOKEN) // logando o client com o token
     .then(() => {
-        console.log(`client logado como ${client.user.username}...`); // log no terminal
+        console.log(`[✓] client logado como ${client.user.username} com sucesso...`); // log no terminal
         
         client.user.setActivity(`em ${client.guilds.cache.size} servidores`); // status do bot
     })
