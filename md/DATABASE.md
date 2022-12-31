@@ -38,3 +38,8 @@ banco de dados provido por [mongodb](https://www.mongodb.com/).
 
 - IP Address: ``0.0.0.0/0``
 - Description: ``public``
+
+---
+
+- Driver: ``Node.js``
+- Driver Version: ``4.1 or later``
