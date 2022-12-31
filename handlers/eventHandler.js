@@ -30,7 +30,7 @@ async function loadEvents(client) {
         table.addRow(event.name, '✔️');
     });
 
-    return console.log(table.toString(), "\neventos inicializados com sucesso...");
+    return console.log(table.toString(), "\n[✓] eventos inicializados com sucesso...");
 }
 
 module.exports = { loadEvents };
