@@ -11,14 +11,17 @@ const client = new Client({
 // função de carregar os eventos do bot
 const { loadEvents } = require('./handlers/eventHandler');
 
-// constando o mongoose para suporte de mongodb
-const { connect } = require('mongoose');
-
 client.config = require('./config.json'); // arquivo que contém configs
 
 // eventos e comandos do bot
 client.events = new Collection();
 client.commands = new Collection();
+
+// constando o mongoose para suporte de mongodb
+const { connect } = require('mongoose');
+
+connect(client.config.DATABASE_URL, {
+}).then(() => console.log("[✓] client conectado ao banco de dados com sucesso..."))
 
 // executar eventos de client
 loadEvents(client);
