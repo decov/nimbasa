@@ -1,0 +1,16 @@
+# https://EditorConfig.org
+
+# arquivo root
+root = true
+
+# configuração para arquivos html, css e javascript
+[{*.html,*.css,*.js}]
+indent_size = 4
+indent_style = tab
+insert_final_newline = false
+
+# configuração para arquivos json
+[{*.json}]
+indent_size = 2
+indent_style = space
+insert_final_newline = true
