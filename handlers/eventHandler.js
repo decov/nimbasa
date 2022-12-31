@@ -27,7 +27,7 @@ async function loadEvents(client) {
                 client.on(event.name, execute);
         }
 
-        table.addRow(event.name, '✔️');
+        table.addRow(event.name, '✅ sucesso');
     });
 
     return console.log(table.toString(), "\n[✓] eventos inicializados com sucesso...");
