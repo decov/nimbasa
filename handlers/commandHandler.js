@@ -23,7 +23,7 @@ async function loadCommands(client) {
 
     client.application.commands.set(commandsArray);
 
-    return console.log(table.toString(), '\ncomandos inicializados com sucesso...');
+    return console.log(table.toString(), '\n[✓] comandos inicializados com sucesso...');
 }
 
 module.exports = { loadCommands };
