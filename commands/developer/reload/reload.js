@@ -1,14 +1,5 @@
 // discord.js
-const {
-    ChatInputCommandInteraction,
-    SlashCommandBuilder,
-    PermissionFlagsBits,
-    Client
-} = require('discord.js');
-
-// constando os handlers de comandos e eventos
-const { loadCommands } = require('../../../handlers/commandHandler');
-const { loadEvents } = require('../../../handlers/eventHandler');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
     developer: true,
@@ -26,42 +17,4 @@ module.exports = {
             .setName('comandos')
             .setDescription('recarrega todos os comandos do bot.')
         ),
-
-    /**
-     * 
-     * @param {ChatInputCommandInteraction} interaction 
-     * @param {Client} client 
-     */
-
-    execute(interaction, client) {
-        const subCommand = interaction.options.getSubcommand();
-
-        switch(subCommand) {
-            case "eventos" : {
-                for (const [key, value] of client.events)
-
-                client.removeListener(`${key}`, value, true);
-
-                loadEvents(client);
-
-                interaction.reply({
-                    content: "eventos recarregados com sucesso...",
-                    ephemeral: true
-                });
-            }
-
-            break;
-
-            case "comandos" : {
-                loadCommands(client);
-
-                interaction.reply({
-                    content: "comandos recarregados com sucesso...",
-                    ephemeral: true
-                });
-            }
-
-            break;
-        }
-    }
 }
