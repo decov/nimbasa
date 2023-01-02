@@ -2,7 +2,7 @@ const { ChatInputCommandInteraction, Client } = require('discord.js');
 const { loadCommands } = require('../../../handlers/commandHandler');
 
 module.exports = {
-	subCommand: 'reload.commands',
+	subCommand: 'reload.comandos',
 
 	/**
 	 * 
