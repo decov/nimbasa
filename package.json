@@ -22,6 +22,7 @@
     "ascii-table": "^0.0.9",
     "discord.js": "^14.7.1",
     "glob": "^8.0.3",
-    "mongoose": "^6.8.2"
+    "mongoose": "^6.8.2",
+    "nodemon": "^2.0.20"
   }
 }
