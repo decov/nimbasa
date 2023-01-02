@@ -5,7 +5,9 @@ async function loadCommands(client) {
 
     const table = new ascii().setHeading('comandos', 'status');
 
+	// commands e subcomandos
     await client.commands.clear();
+	await client.subCommands.clear();
 
     let commandsArray = [];
 
@@ -13,6 +15,9 @@ async function loadCommands(client) {
 
     files.forEach((file) => {
         const command = require(file);
+
+		if (command.subCommand)
+			return client.subCommands.set(command.subCommand, command);
 
         client.commands.set(command.data.name, command);
 
