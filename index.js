@@ -13,9 +13,10 @@ const { loadEvents } = require('./handlers/eventHandler');
 
 client.config = require('./config.json'); // arquivo que contém configs
 
-// eventos e comandos do bot
+// eventos e comandos/subcomandos do bot
 client.events = new Collection();
 client.commands = new Collection();
+client.subCommands = new Collection();
 
 // constando o mongoose para suporte de mongodb
 const { connect } = require('mongoose');
