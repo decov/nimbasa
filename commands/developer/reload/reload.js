@@ -4,7 +4,7 @@ const {
     SlashCommandBuilder,
     PermissionFlagsBits,
     Client
-} = require("discord.js");
+} = require('discord.js');
 
 // constando os handlers de comandos e eventos
 const { loadCommands } = require('../../../handlers/commandHandler');

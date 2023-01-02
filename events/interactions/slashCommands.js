@@ -1,7 +1,7 @@
 const { ChatInputCommandInteraction } = require('discord.js');
 
 module.exports = {
-    name: "interactionCreate",
+    name: 'interactionCreate',
 
     /**
      * 
@@ -15,13 +15,13 @@ module.exports = {
 
         if (!command)
             return interaction.reply({
-                content: "esse comando está desatualizado...",
+                content: 'esse comando está desatualizado...',
                 ephemeral: true
             });
 
-        if (command.developer && interaction.user.id !== "1041302056872448100")
+        if (command.developer && interaction.user.id !== '1041302056872448100')
             return interaction.reply({
-                content: "esse comando está apenas disponível para o desenvolvedor...",
+                content: 'esse comando está apenas disponível para o desenvolvedor...',
                 ephemeral: true
             });
 
