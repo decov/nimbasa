@@ -7,8 +7,8 @@ const {
 } = require("discord.js");
 
 // constando os handlers de comandos e eventos
-const { loadCommands } = require('../../handlers/commandHandler');
-const { loadEvents } = require('../../handlers/eventHandler');
+const { loadCommands } = require('../../../handlers/commandHandler');
+const { loadEvents } = require('../../../handlers/eventHandler');
 
 module.exports = {
     developer: true,
