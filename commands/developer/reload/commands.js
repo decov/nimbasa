@@ -1,4 +1,4 @@
-const { ChatInputCommandInteraction } = require('discord.js');
+const { ChatInputCommandInteraction, Client } = require('discord.js');
 const { loadCommands } = require('../../../handlers/commandHandler');
 
 module.exports = {

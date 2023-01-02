@@ -25,6 +25,21 @@ module.exports = {
                 ephemeral: true
             });
 
-        command.execute(interaction, client);
+		// subcomandos
+		const subCommand = interaction.options.getSubcommand();
+
+		if (subCommand) {
+			const subCommandFile = client.subCommands.get(`${interaction.commandName}.${subCommand}`);
+
+			if (!subCommandFile)
+				return interaction.reply({
+					content: 'esse comando está desatualizado...',
+                	ephemeral: true
+				});
+
+			subCommandFile.execute(interaction, client);
+		} else {
+			command.execute(interaction, client);
+		}
     }
 }
