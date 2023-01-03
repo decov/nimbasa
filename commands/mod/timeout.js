@@ -78,5 +78,42 @@ module.exports = {
 
 			return console.log('[✘] ocorreu um erro no comando timeout.js...', err);
 		});
+
+		const newInfractionsObject = {
+			IssuerID: member.id,
+			IssuerTag: member.user.tag,
+			Reason: reason,
+			Date: new Date.now()
+		}
+
+		let userData = await Database.findOne({
+			Guild: guild.id,
+			User: target.id
+		});
+
+		if (!userData)
+			userData = await Database.create({
+				Guild: guild.id,
+				User: target.id,
+				Infractions: [newInfractionsObject]
+			});
+		else
+			userData.Infractions.push(newInfractionsObject) && await userData.save();
+
+		const successEmbed = new EmbedBuilder()
+			.setColor('Green')
+			.setAuthor({
+				name: 'timeout',
+				iconURL: guild.iconURL()
+			})
+			.setDescription([
+				`${member} aplicou um timeout de **${ms(ms(duration), {long: true})}** em ${target}.`,
+				`o membro agora tem **${userData.Infractions.length} pontos** no total de infrações...`,
+				`\nmotivo da punição: ${reason}`
+			].join('\n'));
+
+		return interaction.reply({
+			embeds: [successEmbed]
+		});
 	}
 }
